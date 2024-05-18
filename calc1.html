@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive percentage calculator to find the percentage of a given amount and calculate the amount from a percentage. Perfect for all your percentage calculation needs.">
+    <title>Percentage Calculator - Calculate Percentage and Amounts Easily</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+        }
+        header {
+            background-color: #0277bd;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header p {
+            margin: 0;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .calculator {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #e3f2fd;
+            transition: box-shadow 0.3s ease;
+        }
+        .calculator:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #0277bd;
+        }
+        button {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #01579b;
+            transform: scale(1.05);
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0277bd;
+            color: white;
+            position: relative;
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+            header, footer {
+                padding: 15px;
+            }
+            button, input {
+                padding: 8px;
+            }
+        }
+    </style>
+    <script>
+        function calculatePercentage() {
+            const total = parseFloat(document.getElementById('total1').value);
+            const amount = parseFloat(document.getElementById('amount1').value);
+            if (isNaN(total) || isNaN(amount) || total === 0) {
+                alert('Please enter valid numbers');
+                return;
+            }
+            const percentage = (amount / total) * 100;
+            document.getElementById('result1').innerText = `Percentage: ${percentage.toFixed(2)}%`;
+        }
+
+        function calculateAmount() {
+            const total = parseFloat(document.getElementById('total2').value);
+            const percentage = parseFloat(document.getElementById('percentage2').value);
+            if (isNaN(total) || isNaN(percentage)) {
+                alert('Please enter valid numbers');
+                return;
+            }
+            const amount = (percentage / 100) * total;
+            document.getElementById('result2').innerText = `Amount: ${amount.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Percentage Calculator</h1>
+        <p>Your go-to tool for calculating percentages and amounts quickly and easily.</p>
+    </header>
+    <main>
+        <h2>Calculate Percentage from Amount</h2>
+        <div class="calculator">
+            <label for="total1">Total:</label>
+            <input type="number" id="total1" name="total1" placeholder="Enter total amount">
+            <label for="amount1">Amount:</label>
+            <input type="number" id="amount1" name="amount1" placeholder="Enter part amount">
+            <button onclick="calculatePercentage()">Calculate Percentage</button>
+            <p id="result1"></p>
+        </div>
+
+        <h2>Calculate Amount from Percentage</h2>
+        <div class="calculator">
+            <label for="total2">Total:</label>
+            <input type="number" id="total2" name="total2" placeholder="Enter total amount">
+            <label for="percentage2">Percentage (%):</label>
+            <input type="number" id="percentage2" name="percentage2" placeholder="Enter percentage">
+            <button onclick="calculateAmount()">Calculate Amount</button>
+            <p id="result2"></p>
+        </div>
+
+        <h2>Understanding Percentages</h2>
+        <p>Percentages are a crucial part of our daily lives. From <a href="https://en.wikipedia.org/wiki/Percentage" target="_blank">calculating discounts</a> during shopping to determining interest rates on loans, percentages play an integral role in various aspects of our financial decisions. Understanding how to calculate percentages accurately can help you make better decisions and manage your finances more effectively. Percentages are also widely used in academic fields such as <a href="https://en.wikipedia.org/wiki/Mathematics" target="_blank">mathematics</a>, <a href="https://en.wikipedia.org/wiki/Statistics" target="_blank">statistics</a>, and <a href="https://en.wikipedia.org/wiki/Economics" target="_blank">economics</a>. Knowing how to work with percentages can give you a significant advantage in understanding and interpreting data. For example, when you see a 20% discount on an item, knowing the original price allows you to quickly calculate the discounted price.</p>
+
+        <h2>Why Use Our Percentage Calculator?</h2>
+        <p>Our percentage calculator is designed to be user-friendly and efficient. Whether you need to calculate the percentage of a number or determine the actual amount based on a given percentage, our tool provides quick and accurate results. This can be especially helpful for students, professionals, and anyone dealing with numbers regularly. By using our calculator, you can save time and reduce the risk of errors in your calculations. This is particularly useful for business professionals who need to make quick decisions based on percentage calculations. Imagine you're managing a budget and need to figure out how much a 15% increase in sales would be; our calculator simplifies this task.</p>
+
+        <h2>How to Use the Percentage Calculator</h2>
+        <p>Using our percentage calculator is straightforward. Simply enter the total amount and the part amount to calculate the percentage. Alternatively, enter the total amount and the percentage to find out the exact amount. The calculator handles the rest, providing you with precise calculations in seconds. This tool is perfect for calculating discounts, interest rates, and other percentage-based calculations. Whether you're shopping, working on a financial report, or studying for an exam, our percentage calculator is here to help. For instance, if you're studying and want to know what grade percentage you need on a final exam to achieve a certain overall grade, our calculator can provide the answer quickly.</p>
+    </main>
+    <footer>
+        <p>simplewebtools.online &copy; All rights reserved 2017</p>
+    </footer>
+</body>
+</html>
